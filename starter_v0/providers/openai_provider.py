@@ -16,10 +16,12 @@ class OpenAIProvider:
         api_key_env: str = "OPENAI_API_KEY",
         base_url: str | None = None,
         default_model: str = "gpt-4o-mini",
+        extra_body: dict[str, Any] | None = None,
     ) -> None:
         self.api_key_env = api_key_env
         self.base_url = base_url
         self.default_model = default_model
+        self.extra_body = extra_body
 
     def complete(
         self,
@@ -49,6 +51,8 @@ class OpenAIProvider:
             kwargs["tools"] = tools
         if tool_choice is not None:
             kwargs["tool_choice"] = tool_choice
+        if self.extra_body:
+            kwargs["extra_body"] = self.extra_body
 
         resp = client.chat.completions.create(**kwargs)
         msg = resp.choices[0].message
