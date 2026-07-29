@@ -45,8 +45,13 @@ Hoặc chọn một provider khác:
 ```bash
 OPENAI_API_KEY=...
 ANTHROPIC_API_KEY=...
+DEEPSEEK_API_KEY=...
 GEMINI_API_KEY=...
 ```
+
+DeepSeek uses `deepseek-v4-flash` by default through
+`https://api.deepseek.com`. Override the endpoint with
+`DEEPSEEK_BASE_URL`, or choose another model with `--model`.
 
 Nếu chọn provider khác, thay `--provider openrouter` bằng provider đó trong **tất cả** lệnh `preflight_provider.py`, `run_eval.py` và `chat.py`.
 
