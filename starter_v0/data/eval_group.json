@@ -94,7 +94,7 @@
         ]
       },
       "metadata": {
-        "what_it_tests": "TODO (chờ Thành viên 2 - Tool Engineer): case cho tool mới `deduplicate`. Tên tool + args placeholder, cần đồng bộ lại đúng contract thật sau khi tool được đăng ký trong tools.yaml/tools/__init__.py. Mục đích: kiểm tra agent gọi đúng tool lọc trùng thay vì tự ý gọi lại lookup/social_search."
+        "what_it_tests": "Case cho tool mới `deduplicate` (đã đăng ký xong trong tools.yaml/tools/__init__.py bởi Thành viên 2). Args để rỗng vì nội dung `items` phụ thuộc kết quả tìm kiếm trước đó, không đoán được cố định; chỉ chấm routing đúng tên tool. Mục đích: kiểm tra agent gọi đúng tool lọc trùng thay vì tự ý gọi lại lookup/social_search."
       }
     },
     {
