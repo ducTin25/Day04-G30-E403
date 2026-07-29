@@ -13,4 +13,5 @@ class DeepSeekProvider(OpenAIProvider):
             api_key_env="DEEPSEEK_API_KEY",
             base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
             default_model="deepseek-v4-flash",
+            extra_body={"thinking": {"type": "disabled"}},
         )
