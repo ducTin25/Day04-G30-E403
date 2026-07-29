@@ -1,7 +1,205 @@
 {
   "dataset_id": "day04_v2_research_group",
   "dataset_role": "group",
-  "description": "Template để NHÓM tự viết đúng 10 case: 5 single-turn dùng query và 5 multi-turn dùng turns. Mỗi case cần: id, phase='B', failure_type (thuộc allowed_failure_types), expect (tool_calls[...] hoặc no_tool=true), và metadata.what_it_tests. File để trống có chủ đích vì mỗi nhóm phải tự thiết kế các case này.",
+  "description": "10 case do nhóm tự viết: 5 single-turn (query) + 5 multi-turn (turns). Bao phủ routing, missing information, confirmation boundary và tool mới (deduplicate).",
   "allowed_failure_types": ["wrong_tool", "wrong_arg_value", "wrong_boundary", "unnecessary_tool", "out_of_scope", "missing_info"],
-  "cases": []
+  "cases": [
+    {
+      "id": "G01_routing_social_topic",
+      "phase": "B",
+      "query": "Mọi người đang nói gì về Gemini 3 trên Twitter?",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "social_search",
+            "args": {
+              "query": "Gemini 3"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Câu hỏi theo CHỦ ĐỀ trên mạng xã hội → phải gọi social_search, không phải timeline hay lookup."
+      }
+    },
+    {
+      "id": "G02_routing_fetch_url",
+      "phase": "B",
+      "query": "Đọc giúp mình bài này: https://openai.com/index/gpt-5-launch",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://openai.com/index/gpt-5-launch"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Đã có URL cụ thể → phải gọi fetch, không phải lookup (tìm lại trên web)."
+      }
+    },
+    {
+      "id": "G03_missing_handle",
+      "phase": "B",
+      "query": "Cho mình xem mấy bài đăng gần đây nhất đi",
+      "failure_type": "missing_info",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "text"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Thiếu screenname/tài khoản cụ thể → phải hỏi lại (clarify text), không được đoán bừa tên tài khoản."
+      }
+    },
+    {
+      "id": "G04_confirm_boundary",
+      "phase": "B",
+      "query": "Gửi bản tóm tắt tin AI hôm nay qua Telegram giúp mình",
+      "failure_type": "wrong_boundary",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "clarify",
+            "args": {
+              "response_type": "yes_no"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Hành động gửi đi (ghi/side-effect) → phải xác nhận yes_no trước, không tự gửi luôn."
+      }
+    },
+    {
+      "id": "G05_new_tool_deduplicate",
+      "phase": "B",
+      "query": "Kết quả tìm kiếm đang bị trùng lặp nhiều bài giống nhau, lọc bớt giúp mình trước khi tóm tắt",
+      "failure_type": "wrong_tool",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "deduplicate",
+            "args": {}
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "TODO (chờ Thành viên 2 - Tool Engineer): case cho tool mới `deduplicate`. Tên tool + args placeholder, cần đồng bộ lại đúng contract thật sau khi tool được đăng ký trong tools.yaml/tools/__init__.py. Mục đích: kiểm tra agent gọi đúng tool lọc trùng thay vì tự ý gọi lại lookup/social_search."
+      }
+    },
+    {
+      "id": "G06_carryover_topic_narrowing",
+      "phase": "B",
+      "turns": [
+        {"role": "user", "content": "Tin công nghệ hôm nay có gì?"},
+        {"role": "user", "content": "Còn về AI thì sao?"},
+        {"role": "user", "content": "Chỉ tìm AI thôi, vẫn là tin hôm nay nhé"}
+      ],
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: chỉ xử lý turn cuối, nhưng phải carry timeframe=day từ turn 1 và thu hẹp query theo turn 2-3."
+      }
+    },
+    {
+      "id": "G07_correction_handle_then_limit",
+      "phase": "B",
+      "turns": [
+        {"role": "user", "content": "Tweet mới nhất của Elon Musk"},
+        {"role": "user", "content": "À nhầm, của Sundar Pichai"},
+        {"role": "user", "content": "Lấy 5 tweet thôi nhé"}
+      ],
+      "failure_type": "wrong_arg_value",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "timeline",
+            "args": {
+              "screenname": "sundarpichai",
+              "limit": 5
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: xử lý correction tên người (Elon Musk → Sundar Pichai) và map đúng handle, đồng thời áp dụng limit=5 từ turn cuối."
+      }
+    },
+    {
+      "id": "G08_clarify_then_url",
+      "phase": "B",
+      "turns": [
+        {"role": "user", "content": "Tóm tắt bài báo này giúp mình"},
+        {"role": "user", "content": "https://www.anthropic.com/news/claude-4"},
+        {"role": "user", "content": "Ừ, đúng link đó, đọc đi"}
+      ],
+      "failure_type": "missing_info",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://www.anthropic.com/news/claude-4"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: turn 1 thiếu URL (đáng lẽ phải hỏi lại), turn 2 bổ sung link, turn 3 xác nhận → agent phải đọc đúng URL đã cho, không hỏi lại nữa."
+      }
+    },
+    {
+      "id": "G09_out_of_scope_after_research",
+      "phase": "B",
+      "turns": [
+        {"role": "user", "content": "Tin AI hôm nay có gì nổi bật?"},
+        {"role": "assistant", "content": "Mình đã tìm thấy vài tin AI nổi bật hôm nay."},
+        {"role": "user", "content": "Giờ viết giúp mình một đoạn code sắp xếp mảng bằng Python nhé"}
+      ],
+      "failure_type": "out_of_scope",
+      "expect": {
+        "no_tool": true
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: sau khi đã research xong, turn cuối chuyển sang yêu cầu ngoài phạm vi (viết code) → phải từ chối/định hướng lại, không gọi tool nào."
+      }
+    },
+    {
+      "id": "G10_stop_research_then_meta",
+      "phase": "B",
+      "turns": [
+        {"role": "user", "content": "Tìm tin về robotics tuần này giúp mình"},
+        {"role": "user", "content": "Thôi khỏi cần tìm nữa, cảm ơn bạn"},
+        {"role": "user", "content": "Bạn dùng model gì để trả lời mình vậy?"}
+      ],
+      "failure_type": "unnecessary_tool",
+      "expect": {
+        "no_tool": true
+      },
+      "metadata": {
+        "what_it_tests": "Multi-turn: user đã huỷ yêu cầu tìm kiếm ở turn 2, turn cuối chỉ hỏi meta về agent → không được gọi lại lookup/social_search một cách thừa thãi."
+      }
+    }
+  ]
 }
