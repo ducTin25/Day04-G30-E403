@@ -56,6 +56,25 @@ tools:
         url: {type: string, default: "", description: "Địa chỉ"}
       required: [url]
 
+  - name: deduplicate
+    description: "Loại bỏ item trùng lặp khỏi dữ liệu đã thu thập; giữ item xuất hiện đầu tiên. Chỉ dùng khi người dùng yêu cầu khử trùng lặp, không dùng để tìm kiếm hoặc đọc nguồn."
+    parameters:
+      type: object
+      properties:
+        items:
+          type: array
+          default: []
+          description: "Danh sách item đã thu thập cần loại bỏ trùng lặp"
+          items:
+            type: object
+            properties:
+              title: {type: string}
+              url: {type: string}
+              source: {type: string}
+              summary: {type: string}
+              section: {type: string}
+      required: [items]
+
   - name: format
     description: "Trình bày dữ liệu đã có thành văn bản."
     parameters:
