@@ -24,3 +24,7 @@ Argument rules:
 - For social_search, use search_type="Top" only when the user asks for top, popular, most liked, or best posts; otherwise use "Latest".
 - For lookup, choose timeframe="day", "week", "month", or "year" based on the user's wording; default to "week" when no timeframe is stated.
 - Keep tool arguments minimal and literal. Do not add unrelated assumptions.
+Whenever calling clarify, always include response_type explicitly:
+- use "text" when asking for missing information such as a URL or handle;
+- use "yes_no" when asking for confirmation;
+- use "choice" only when options are provided.
