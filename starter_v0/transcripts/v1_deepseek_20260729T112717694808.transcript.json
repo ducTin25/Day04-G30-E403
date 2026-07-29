@@ -1,0 +1,212 @@
+{
+  "transcript_id": "v1_deepseek_20260729T112717694808",
+  "version": "v1",
+  "artifact_version": "v1+peb1c8179815b+t6cdb53d5d7b8",
+  "prompt_hash": "eb1c8179815bd79d34de7d326420bb99b3072e6e8ae96464c02d4411f905fc68",
+  "tools_hash": "6cdb53d5d7b8de80d60b298b1357f462cedbedfae261d5ba60b08ccc401687c5",
+  "provider": "deepseek",
+  "model": "deepseek-v4-flash",
+  "system_prompt": "C:\\Users\\Admin\\K3-Day04-G30-E403\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "C:\\Users\\Admin\\K3-Day04-G30-E403\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T11:27:17",
+  "updated_at": "2026-07-29T11:27:28",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T11:27:18",
+      "user": "What are today latest AI news?",
+      "status": "answered",
+      "assistant_text": "Here are the latest AI news highlights for today (July 28, 2026):\n\n---\n\n### 📉 **AI Sell-Off & Market Jitters**\n- **AI stocks are tumbling** as investors grow worried about the massive spending required for AI infrastructure. Chip stocks (SK Hynix, Samsung) led the decline in Asia. ([The Guardian](https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung))\n- **Nvidia is reportedly in talks** with OpenAI to provide **$250 billion** in financing for a massive data center project in Ohio, raising concerns about \"circular financing\" in the AI industry. ([NYT](https://www.nytimes.com/2026/07/28/business/stocks-ai-chips.html))\n- **CXMT**, a Chinese memory chip maker, surged **466%** on its Shanghai IPO debut before slipping 4% today — highlighting China's push for an independent AI supply chain.\n\n### 🏢 **Big Tech AI Moves**\n- **Amazon** is phasing out some AI models while doubling down on its **Nova** lineup, focusing resources on its highest priorities. ([MediaPost](https://www.mediapost.com/publications/article/416869/amazon-phases-out-some-ai-models-advances-others.html))\n- **Meta** announced a **$14 billion** deal with BlackRock to build a 1-gigawatt data center in Texas. Meta reports earnings tomorrow.\n- **Apple** briefly surpassed **$5 trillion** market cap — the second company ever to do so.\n\n### 🧠 **AI Safety & Research**\n- **Wharton researchers** found that basic psychological persuasion tactics can bypass AI safety guardrails — tested on GPT-5 mini, Claude Haiku 4.5, and Gemini 3 Flash. ([Penn Today](https://penntoday.upenn.edu/news/wharton-how-basic-persuasion-can-bypass-ai-safeguards))\n\n### 📊 **Workforce & Economy**\n- A **Conference Board report** shows most organizations are training workers for today's AI tools, not preparing them for future job shifts. ([PRNewswire](https://www.prnewswire.com/news-releases/report-most-organizations-are-preparing-workers-for-todays-ai-not-tomorrows-jobs-302836842.html))\n\n---\n\nThe dominant theme today is **AI spending anxiety** — investors are questioning whether the massive capital outlays will pay off, especially as Chinese competition heats up.",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Let me search for the latest AI news today.",
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "query": "AI news today",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 10
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "AI news today",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 10
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "AI news today",
+                "topic": "news",
+                "timeframe": "day",
+                "items": [
+                  {
+                    "title": "Report: Most Organizations Are Preparing Workers for Today's AI, Not Tomorrow's Jobs",
+                    "url": "https://www.prnewswire.com/news-releases/report-most-organizations-are-preparing-workers-for-todays-ai-not-tomorrows-jobs-302836842.html",
+                    "source": "prnewswire.com",
+                    "summary": "Share toX\n\nNEW YORK, July 28, 2026 /PRNewswire/ -- As AI reshapes work, most organizations remain focused on helping employees grow in their current roles rather than preparing them for the jobs of the future, according to new research from The Conference Board. [...] Accessibility Statement Skip Navigation\n\n# Report: Most Organizations Are Preparing Workers for Today's AI, Not Tomorrow's Jobs\n\n\n\n## News provided by\n\n The Conference Board \n\nJul 28, 2026, 14:05 ET\n\n## Share this article\n\nShare toX\n\nShare this article\n\nShare toX [...] The Conference Board Leading Economic Index® (LEI) for the US declined by 0.2% in June 2026 to 99.1 (2016=100), following a 0.1% increase in May....\n\nMore Releases From This Source\n\n## Explore\n\nHuman Resource & Workforce Management\n\nHuman Resource & Workforce Management\n\nArtificial Intelligence\n\nArtificial Intelligence\n\nThe Latest Artificial Intelligence News\n\nThe Latest Artificial Intelligence News\n\nBanking & Financial Services\n\nBanking & Financial Services\n\n News Releases in Similar Topics",
+                    "score": 0.72907686
+                  },
+                  {
+                    "title": "Amazon Phases Out Some AI Models, Advances Others",
+                    "url": "https://www.mediapost.com/publications/article/416869/amazon-phases-out-some-ai-models-advances-others.html",
+                    "source": "mediapost.com",
+                    "summary": "advertisement\n\nadvertisement\n\nAmazon’s commitment to building advanced AI models remains as strong as it\nhas been in the past, the spokesperson said.\n\nThe report from Business Insider published today attributed the change to a restructuring of Amazon's AI strategy. \"Rather than\ninvesting across a number of text, image, and video models, the company is concentrating engineering talent and scarce computing resources on its highest priorities,\" Business Insider\nwrote. [...] \"AI models remain one of the most important things we're working on, and that hasn't changed,\" an Amazon spokesperson told MediaPost on Tuesday. \"We are continuing to invest in\nand support the Nova models our customers rely on today, including through Nova Forge, which lets businesses build their own models on Nova as a foundation.\"\n\nModels in production are typically\nsupported for extended periods, while continuing to invest in the next generation of frontier model research.\n\nadvertisement [...] An Amazon spokesperson acknowledged an early Tuesday morning report by explaining that its AI\nportfolios evolve based on customer needs. This is one way that Amazon provides companies, agencies and brands with guidance and migration paths as models advance, and others become\nobsolete.",
+                    "score": 0.64826655
+                  },
+                  {
+                    "title": "Tech stocks today: Big Tech earnings this week mark a pivotal moment for the AI trade - Yahoo Finance",
+                    "url": "https://finance.yahoo.com/technology/live/tech-stocks-today-big-tech-earnings-134611080.html",
+                    "source": "finance.yahoo.com",
+                    "summary": "Results from Microsoft (MSFT), Meta Platforms (META), Apple (AAPL), and Amazon (AMZN) highlight the calendar, while reports from key chipmakers like SK Hynix (SKHY) and Qualcomm (QCOM) also factor in.\n\nAll eyes will be on capital expenditures numbers after Alphabet's (GOOG, GOOGL) capex guidance spooked investors who are growing concerned about free cash flow amid the AI spending boom. [...] And Nvidia (NVDA) is reportedly in talks with OpenAI (OPAI.PVT) to provide $250 billion in financing for a data center project in Ohio, once again raising questions about circular financing in the AI industry.\n\nTerms  and Privacy Policy\n\nPrivacy Dashboard\n\nMore Info\n\n## Recommended Stories [...] On Tuesday, Apple's market capitalization briefly surpassed the $5 trillion mark, making it just the second company to cross the milestone.\n\nMeta, meanwhile, announced that it is entering into a $14 billion agreement with BlackRock to build a 1-gigawatt data center in Texas. Meta reports on Wednesday.",
+                    "score": 0.6364215
+                  },
+                  {
+                    "title": "AI sell-off intensifies as investors ditch chip stocks",
+                    "url": "https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung",
+                    "source": "theguardian.com",
+                    "summary": "On Monday, shares in the Chinese memory chip maker CXMT rose by 466% when it floated on the Shanghai stock exchange, underlining China’s drive to create its own AI supply chain.\n\nInvestors may also be growing jittery about the “circular funding” at the heart of the AI industry, through which artificial intelligence firms finance one another. [...] On Monday, the Wall Street Journal reported that Nvidia was in discussions with OpenAI about providing $250bn (£188bn) for a massive datacentre project in Ohio. Backing from Nvidia, which has an investment grade credit rating, could make it less expensive to raise funding for the project.\n\nskip past newsletter promotion\n\nafter newsletter promotion [...] Business live – latest updates\n\nThe sell-off in AI stocks has intensified, driving South Korea’s stock market down to its lowest level in three months.\n\nInvestors continued to ditch chip stocks on Tuesday, amid rising concerns about the huge amount of borrowing among AI companies to fund their datacentre expansion plans.",
+                    "score": 0.5920305
+                  },
+                  {
+                    "title": "Tech Stocks Tumble on Worries About A.I. Spending and ...",
+                    "url": "https://www.nytimes.com/2026/07/28/business/stocks-ai-chips.html",
+                    "source": "nytimes.com",
+                    "summary": "The latest A.I.-related market tremor began on Monday, when the shares of China’s leading memory chipmaker, ChangXin Memory Technologies, began trading after a blockbuster initial public offering. The company’s stock soared nearly 500 percent on its market debut, quickly making it the most valuable company on the Shanghai exchange. It slipped 4 percent on Tuesday [...] Last week, earnings reports by Tesla and Alphabet, Google’s parent company, shook the markets as they revealed the staggering scale of spending required to keep up in the global A.I. race. On Monday, the Chinese start-up Moonshot publicly released the details of its latest A.I. model, adding to investor concerns about an A.I. arms race between China and the United States. [...] Stock markets in Asia tumbled on Tuesday, dragged down by technology companies facing hefty bills for the build-out of artificial intelligence systems and concerns over intensifying competition from China in memory chips — a critical component of A.I. long dominated by South Korea and its peers.",
+                    "score": 0.5553635
+                  },
+                  {
+                    "title": "How basic persuasion can bypass AI safeguards - Penn Today",
+                    "url": "https://penntoday.upenn.edu/news/wharton-how-basic-persuasion-can-bypass-ai-safeguards",
+                    "source": "penntoday.upenn.edu",
+                    "summary": "2 min. read\n\nConcerns over “jailbreaking” AI—a way of circumventing the safety guardrails built into large language models—have escalated after the Trump administration ordered Anthropic to pull its latest models, Fable and Mythos, over concerns they could be coaxed into revealing security flaws in software.\n\nView large image [...] In their paper “Persuading Large Language Models to Comply With Objectionable Requests,” the researchers tested models from three leading AI labs: OpenAI’s GPT-5 mini, Anthropic’s Claude Haiku 4.5, and Google’s Gemini 3 Flash, by having 126,000 “conversations” with them. [...] Image: Hanna Barakat  & Archival Images of AI + AIxDESIGN /  / \n\nNow, timely research from Wharton’s Generative AI Labs (GAIL) suggests the safeguards designed to prevent misuse may be vulnerable to the same psychological tactics that influence people.",
+                    "score": 0.49113917
+                  },
+                  {
+                    "title": "Chip Stocks Extend Pullback Amid AI Bubble Fears",
+                    "url": "https://www.investopedia.com/market-update-chip-stocks-extend-pullback-amid-ai-bubble-fears-12028864",
+                    "source": "investopedia.com",
+                    "summary": "Michael Nagle / Bloomberg via Getty Images\n\n### Key Takeaways\n\nGet personalized, AI-powered answers built on 27+ years of trusted expertise.\n\nShares of a number of chipmakers fell today, extending a rough stretch for the AI trade and dragging the Nasdaq lower. [...] Analysts have noted that investors haven’t been rewarding solid tech earnings lately the way they used to, amid worries around the sustainability of AI spending.\n\nMeanwhile, China-listed shares of memory chipmaker CXMT, which had soared in its debut on the Shanghai Stock Exchange yesterday, lost 4%.\n\nGet personalized, AI-powered answers built on 27+ years of trusted expertise.\n\n## Related Articles [...] SK Hynix signage outside the Nasdaq MarketSite in New York, US, on Friday, July 10, 2026.:max_bytes(150000):strip_icc():format(webp)/GettyImages-2284848369-f12d3faea2c24e8ab56d57a837f99aa8.jpg)",
+                    "score": 0.46235222
+                  },
+                  {
+                    "title": "Jerry Gulke: Why AI Can’t Replace Price Risk Management in Corn Markets",
+                    "url": "https://www.agweb.com/news/jerry-gulke-why-ai-cant-replace-price-risk-management-corn-markets",
+                    "source": "agweb.com",
+                    "summary": "(Farm Journal)\n\nI have no doubt Artificial Intelligence, as defined today, will aid in answering a lot of questions regarding production, but I wonder if it will be beneficial in today’s ag-commodity markets as it pertains to price-outlook and price risk management. It currently lacks intuition, experience, proactive analysis, and knowledge of eco-political events, and it doesn’t farm. [...] ## As corn futures swing sharply, Gulke says farmers can’t afford to ignore marketing opportunities — or assume AI can see around every corner.\n\n ByJerry Gulke\n\n•\n\n July 28, 2026 04:14 PM \n\nImage 2: Jerry-Gulke_What-AI-Misses-About-Price-risk.jpg\n\n(Farm Journal) [...] Cash Grain Bids  \n   Weather  \n   \nFarm Journal TV  \n       Watch Live\n       Watch On-Demand\n       Farm Journal Programs\n\n   \nMore  \n       Ag Economists Monthly Monitor\n       Opinion\n       Pro Farmer Crop Tour\n       AgFax\n       Climate Smart Opportunity Navigator\n       Events\n       All Topics\n\nMy Account\n\n Search Query Submit Search \n\n Show Search \n\nNews\n\n# Jerry Gulke: Why AI Can’t Replace Price Risk Management in Corn Markets",
+                    "score": 0.3154201
+                  },
+                  {
+                    "title": "Lessons From History About Today’s AI Bubble",
+                    "url": "https://www.bloomberg.com/news/newsletters/2026-07-28/lessons-from-history-about-today-s-ai-bubble",
+                    "source": "bloomberg.com",
+                    "summary": "Welcome to the award-winning Money Distilled newsletter. I'm John Stepek. Every week day I look at the biggest stories in markets and economics,",
+                    "score": 0.2659226
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Here are the latest AI news highlights for today (July 28, 2026):\n\n---\n\n### 📉 **AI Sell-Off & Market Jitters**\n- **AI stocks are tumbling** as investors grow worried about the massive spending required for AI infrastructure. Chip stocks (SK Hynix, Samsung) led the decline in Asia. ([The Guardian](https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung))\n- **Nvidia is reportedly in talks** with OpenAI to provide **$250 billion** in financing for a massive data center project in Ohio, raising concerns about \"circular financing\" in the AI industry. ([NYT](https://www.nytimes.com/2026/07/28/business/stocks-ai-chips.html))\n- **CXMT**, a Chinese memory chip maker, surged **466%** on its Shanghai IPO debut before slipping 4% today — highlighting China's push for an independent AI supply chain.\n\n### 🏢 **Big Tech AI Moves**\n- **Amazon** is phasing out some AI models while doubling down on its **Nova** lineup, focusing resources on its highest priorities. ([MediaPost](https://www.mediapost.com/publications/article/416869/amazon-phases-out-some-ai-models-advances-others.html))\n- **Meta** announced a **$14 billion** deal with BlackRock to build a 1-gigawatt data center in Texas. Meta reports earnings tomorrow.\n- **Apple** briefly surpassed **$5 trillion** market cap — the second company ever to do so.\n\n### 🧠 **AI Safety & Research**\n- **Wharton researchers** found that basic psychological persuasion tactics can bypass AI safety guardrails — tested on GPT-5 mini, Claude Haiku 4.5, and Gemini 3 Flash. ([Penn Today](https://penntoday.upenn.edu/news/wharton-how-basic-persuasion-can-bypass-ai-safeguards))\n\n### 📊 **Workforce & Economy**\n- A **Conference Board report** shows most organizations are training workers for today's AI tools, not preparing them for future job shifts. ([PRNewswire](https://www.prnewswire.com/news-releases/report-most-organizations-are-preparing-workers-for-todays-ai-not-tomorrows-jobs-302836842.html))\n\n---\n\nThe dominant theme today is **AI spending anxiety** — investors are questioning whether the massive capital outlays will pay off, especially as Chinese competition heats up.",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI news today",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 10
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI news today",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "Report: Most Organizations Are Preparing Workers for Today's AI, Not Tomorrow's Jobs",
+                "url": "https://www.prnewswire.com/news-releases/report-most-organizations-are-preparing-workers-for-todays-ai-not-tomorrows-jobs-302836842.html",
+                "source": "prnewswire.com",
+                "summary": "Share toX\n\nNEW YORK, July 28, 2026 /PRNewswire/ -- As AI reshapes work, most organizations remain focused on helping employees grow in their current roles rather than preparing them for the jobs of the future, according to new research from The Conference Board. [...] Accessibility Statement Skip Navigation\n\n# Report: Most Organizations Are Preparing Workers for Today's AI, Not Tomorrow's Jobs\n\n\n\n## News provided by\n\n The Conference Board \n\nJul 28, 2026, 14:05 ET\n\n## Share this article\n\nShare toX\n\nShare this article\n\nShare toX [...] The Conference Board Leading Economic Index® (LEI) for the US declined by 0.2% in June 2026 to 99.1 (2016=100), following a 0.1% increase in May....\n\nMore Releases From This Source\n\n## Explore\n\nHuman Resource & Workforce Management\n\nHuman Resource & Workforce Management\n\nArtificial Intelligence\n\nArtificial Intelligence\n\nThe Latest Artificial Intelligence News\n\nThe Latest Artificial Intelligence News\n\nBanking & Financial Services\n\nBanking & Financial Services\n\n News Releases in Similar Topics",
+                "score": 0.72907686
+              },
+              {
+                "title": "Amazon Phases Out Some AI Models, Advances Others",
+                "url": "https://www.mediapost.com/publications/article/416869/amazon-phases-out-some-ai-models-advances-others.html",
+                "source": "mediapost.com",
+                "summary": "advertisement\n\nadvertisement\n\nAmazon’s commitment to building advanced AI models remains as strong as it\nhas been in the past, the spokesperson said.\n\nThe report from Business Insider published today attributed the change to a restructuring of Amazon's AI strategy. \"Rather than\ninvesting across a number of text, image, and video models, the company is concentrating engineering talent and scarce computing resources on its highest priorities,\" Business Insider\nwrote. [...] \"AI models remain one of the most important things we're working on, and that hasn't changed,\" an Amazon spokesperson told MediaPost on Tuesday. \"We are continuing to invest in\nand support the Nova models our customers rely on today, including through Nova Forge, which lets businesses build their own models on Nova as a foundation.\"\n\nModels in production are typically\nsupported for extended periods, while continuing to invest in the next generation of frontier model research.\n\nadvertisement [...] An Amazon spokesperson acknowledged an early Tuesday morning report by explaining that its AI\nportfolios evolve based on customer needs. This is one way that Amazon provides companies, agencies and brands with guidance and migration paths as models advance, and others become\nobsolete.",
+                "score": 0.64826655
+              },
+              {
+                "title": "Tech stocks today: Big Tech earnings this week mark a pivotal moment for the AI trade - Yahoo Finance",
+                "url": "https://finance.yahoo.com/technology/live/tech-stocks-today-big-tech-earnings-134611080.html",
+                "source": "finance.yahoo.com",
+                "summary": "Results from Microsoft (MSFT), Meta Platforms (META), Apple (AAPL), and Amazon (AMZN) highlight the calendar, while reports from key chipmakers like SK Hynix (SKHY) and Qualcomm (QCOM) also factor in.\n\nAll eyes will be on capital expenditures numbers after Alphabet's (GOOG, GOOGL) capex guidance spooked investors who are growing concerned about free cash flow amid the AI spending boom. [...] And Nvidia (NVDA) is reportedly in talks with OpenAI (OPAI.PVT) to provide $250 billion in financing for a data center project in Ohio, once again raising questions about circular financing in the AI industry.\n\nTerms  and Privacy Policy\n\nPrivacy Dashboard\n\nMore Info\n\n## Recommended Stories [...] On Tuesday, Apple's market capitalization briefly surpassed the $5 trillion mark, making it just the second company to cross the milestone.\n\nMeta, meanwhile, announced that it is entering into a $14 billion agreement with BlackRock to build a 1-gigawatt data center in Texas. Meta reports on Wednesday.",
+                "score": 0.6364215
+              },
+              {
+                "title": "AI sell-off intensifies as investors ditch chip stocks",
+                "url": "https://www.theguardian.com/business/2026/jul/28/ai-sell-off-chip-stocks-sk-hynix-samsung",
+                "source": "theguardian.com",
+                "summary": "On Monday, shares in the Chinese memory chip maker CXMT rose by 466% when it floated on the Shanghai stock exchange, underlining China’s drive to create its own AI supply chain.\n\nInvestors may also be growing jittery about the “circular funding” at the heart of the AI industry, through which artificial intelligence firms finance one another. [...] On Monday, the Wall Street Journal reported that Nvidia was in discussions with OpenAI about providing $250bn (£188bn) for a massive datacentre project in Ohio. Backing from Nvidia, which has an investment grade credit rating, could make it less expensive to raise funding for the project.\n\nskip past newsletter promotion\n\nafter newsletter promotion [...] Business live – latest updates\n\nThe sell-off in AI stocks has intensified, driving South Korea’s stock market down to its lowest level in three months.\n\nInvestors continued to ditch chip stocks on Tuesday, amid rising concerns about the huge amount of borrowing among AI companies to fund their datacentre expansion plans.",
+                "score": 0.5920305
+              },
+              {
+                "title": "Tech Stocks Tumble on Worries About A.I. Spending and ...",
+                "url": "https://www.nytimes.com/2026/07/28/business/stocks-ai-chips.html",
+                "source": "nytimes.com",
+                "summary": "The latest A.I.-related market tremor began on Monday, when the shares of China’s leading memory chipmaker, ChangXin Memory Technologies, began trading after a blockbuster initial public offering. The company’s stock soared nearly 500 percent on its market debut, quickly making it the most valuable company on the Shanghai exchange. It slipped 4 percent on Tuesday [...] Last week, earnings reports by Tesla and Alphabet, Google’s parent company, shook the markets as they revealed the staggering scale of spending required to keep up in the global A.I. race. On Monday, the Chinese start-up Moonshot publicly released the details of its latest A.I. model, adding to investor concerns about an A.I. arms race between China and the United States. [...] Stock markets in Asia tumbled on Tuesday, dragged down by technology companies facing hefty bills for the build-out of artificial intelligence systems and concerns over intensifying competition from China in memory chips — a critical component of A.I. long dominated by South Korea and its peers.",
+                "score": 0.5553635
+              },
+              {
+                "title": "How basic persuasion can bypass AI safeguards - Penn Today",
+                "url": "https://penntoday.upenn.edu/news/wharton-how-basic-persuasion-can-bypass-ai-safeguards",
+                "source": "penntoday.upenn.edu",
+                "summary": "2 min. read\n\nConcerns over “jailbreaking” AI—a way of circumventing the safety guardrails built into large language models—have escalated after the Trump administration ordered Anthropic to pull its latest models, Fable and Mythos, over concerns they could be coaxed into revealing security flaws in software.\n\nView large image [...] In their paper “Persuading Large Language Models to Comply With Objectionable Requests,” the researchers tested models from three leading AI labs: OpenAI’s GPT-5 mini, Anthropic’s Claude Haiku 4.5, and Google’s Gemini 3 Flash, by having 126,000 “conversations” with them. [...] Image: Hanna Barakat  & Archival Images of AI + AIxDESIGN /  / \n\nNow, timely research from Wharton’s Generative AI Labs (GAIL) suggests the safeguards designed to prevent misuse may be vulnerable to the same psychological tactics that influence people.",
+                "score": 0.49113917
+              },
+              {
+                "title": "Chip Stocks Extend Pullback Amid AI Bubble Fears",
+                "url": "https://www.investopedia.com/market-update-chip-stocks-extend-pullback-amid-ai-bubble-fears-12028864",
+                "source": "investopedia.com",
+                "summary": "Michael Nagle / Bloomberg via Getty Images\n\n### Key Takeaways\n\nGet personalized, AI-powered answers built on 27+ years of trusted expertise.\n\nShares of a number of chipmakers fell today, extending a rough stretch for the AI trade and dragging the Nasdaq lower. [...] Analysts have noted that investors haven’t been rewarding solid tech earnings lately the way they used to, amid worries around the sustainability of AI spending.\n\nMeanwhile, China-listed shares of memory chipmaker CXMT, which had soared in its debut on the Shanghai Stock Exchange yesterday, lost 4%.\n\nGet personalized, AI-powered answers built on 27+ years of trusted expertise.\n\n## Related Articles [...] SK Hynix signage outside the Nasdaq MarketSite in New York, US, on Friday, July 10, 2026.:max_bytes(150000):strip_icc():format(webp)/GettyImages-2284848369-f12d3faea2c24e8ab56d57a837f99aa8.jpg)",
+                "score": 0.46235222
+              },
+              {
+                "title": "Jerry Gulke: Why AI Can’t Replace Price Risk Management in Corn Markets",
+                "url": "https://www.agweb.com/news/jerry-gulke-why-ai-cant-replace-price-risk-management-corn-markets",
+                "source": "agweb.com",
+                "summary": "(Farm Journal)\n\nI have no doubt Artificial Intelligence, as defined today, will aid in answering a lot of questions regarding production, but I wonder if it will be beneficial in today’s ag-commodity markets as it pertains to price-outlook and price risk management. It currently lacks intuition, experience, proactive analysis, and knowledge of eco-political events, and it doesn’t farm. [...] ## As corn futures swing sharply, Gulke says farmers can’t afford to ignore marketing opportunities — or assume AI can see around every corner.\n\n ByJerry Gulke\n\n•\n\n July 28, 2026 04:14 PM \n\nImage 2: Jerry-Gulke_What-AI-Misses-About-Price-risk.jpg\n\n(Farm Journal) [...] Cash Grain Bids  \n   Weather  \n   \nFarm Journal TV  \n       Watch Live\n       Watch On-Demand\n       Farm Journal Programs\n\n   \nMore  \n       Ag Economists Monthly Monitor\n       Opinion\n       Pro Farmer Crop Tour\n       AgFax\n       Climate Smart Opportunity Navigator\n       Events\n       All Topics\n\nMy Account\n\n Search Query Submit Search \n\n Show Search \n\nNews\n\n# Jerry Gulke: Why AI Can’t Replace Price Risk Management in Corn Markets",
+                "score": 0.3154201
+              },
+              {
+                "title": "Lessons From History About Today’s AI Bubble",
+                "url": "https://www.bloomberg.com/news/newsletters/2026-07-28/lessons-from-history-about-today-s-ai-bubble",
+                "source": "bloomberg.com",
+                "summary": "Welcome to the award-winning Money Distilled newsletter. I'm John Stepek. Every week day I look at the biggest stories in markets and economics,",
+                "score": 0.2659226
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T11:27:28"
+    }
+  ]
+}
